@@ -619,7 +619,9 @@ open class FloatingPanelController: UIViewController {
         if let newLayout = self.delegate?.floatingPanel?(self, layoutFor: traitCollection) {
             layout = newLayout
         }
-        activateLayout(forceLayout: true)
+        move(to: floatingPanel.layoutAdapter.initialState,
+             animated: false,
+             completion: nil)
     }
 
     /// Returns the surface's position in a panel controller's view for the specified state.
